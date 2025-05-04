@@ -27,7 +27,7 @@ Esta aplicação permite buscar os tweets mais recentes de um usuário do Twitte
 - Node.js v18+
 - Yarn ou npm
 - Conta na [OpenAI](https://platform.openai.com/) com chave de API
-- Conta no [XDeveloper](https://developer.x.com/) com chave de API
+- Conta no [X Developer](https://developer.x.com/) com chave de API
 
 ---
 
@@ -88,7 +88,6 @@ npm run dev
 
 - 🔍 Busca tweets recentes de um usuário (@username);
 - 🧠 Gera resumo automático usando a OpenAI;
-- 🌑 Tema escuro por padrão;
 - 📄 Suporte a dados mockados (utilizados para testes enquanto a API do Twitter estava com limitações).
 
 ---
@@ -96,7 +95,7 @@ npm run dev
 ## 📁 Estrutura de Pastas (simplificada)
 
 ```
-project-root/
+furia-howl/
 │
 ├── backend/
 │   ├── src/
@@ -123,7 +122,7 @@ project-root/
 
 ## ⚠️ Limitações Atuais
 
-- A API oficial do Twitter impõe **limites de requisição (rate limit)** na versão gratuita, para mostrar funcionalidade do projeto os testes são feitos com dados mockados;
+- A API oficial do Twitter impõe **limites de requisição (rate limit)** na versão gratuita, para mostrar funcionalidade do projeto os testes são feitos com dados mockados ou aguardando o Rate Limit resetar;
 - A aplicação não possui paginação nem busca avançada;
 - Sem testes automatizados implementados até o momento;
 - Design ainda básico (foco atual: funcionalidade);
@@ -133,7 +132,7 @@ project-root/
 
 ## 🚀 Melhorias Futuras
 
-- Implementação de um ChatBOT
+- Implementação de um ChatBOT com a personalidade da FURIA
 - Sistema de cache/localStorage para reduzir chamadas à API;
 - Painel de visualização com análises/sentimento;
 - Criação de testes com Jest e Cypress;
