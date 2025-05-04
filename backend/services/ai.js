@@ -13,7 +13,7 @@ export const summarizeTweets = async (tweets) => {
   try {
     const response = await openai.chat.completions.create({
       messages: [
-        { role: "systemn", content: "Você é um assistente que analisa tweets sobre e-sports com foco na FURIA e CS:GO." },
+        { role: "system", content: "Você é um assistente que analisa tweets sobre e-sports com foco na FURIA e CS:GO." },
         { role: "user", content: prompt },
       ],
       model: "gpt-4o-mini",

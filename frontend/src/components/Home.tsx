@@ -21,14 +21,14 @@ const Home = () => {
       setSummary(res.data.summary);
     } catch (err) {
       console.error("Erro ao pegar tweets", err)
-      alert("Erro ao buscar dados");
+      alert("Erro ao buscar dados, API do twitter fora ou Rate Limiting");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="p-6 w-full max-w-2xl">
+    <div className="p-6 w-full max-w-2xl relative">
       <h1 className="text-2xl font-bold mb-4">Resumo de Tweets</h1>
       <div className="flex items-center gap-2 mb-4">
         <input
@@ -49,7 +49,7 @@ const Home = () => {
 
       {summary && (
         <div className="mb-6 bg-gray-900 p-4 rounded">
-          <h2 className="text-lg font-semibold mb-2">Resumo:</h2>
+          <h2 className="text-lg font-semibold mb-2">Resumo de tweets do usúario:</h2>
           <p>{summary}</p>
         </div>
       )}

@@ -62,9 +62,7 @@ No diretório `/backend`, crie um arquivo `.env` com:
 
 ```env
 PORT=porta
-TWITTER_API_KEY=sua_api
-TWITTER_API_SECRET=sua_secret_api
-TWITTER_BEARER_TOKEN=bearer_twitter_api
+TWITTER_BEARER_TOKEN=seu_bearer_token
 OPENAI_API_KEY=sua_openai_key
 ```
 

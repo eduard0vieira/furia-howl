@@ -40,7 +40,7 @@ router.get("/user/:username", async (req, res) => {
         const now = Math.floor(Date.now() / 1000);
         const waitTime = (resetTime - now + 1) * 1000;
 
-        console.warn(`Rate limit atingido. Aguardando ${waitTime / 1000} segundos (${waitTime/60})...`);
+        console.warn(`Rate limit atingido. Aguarde ${waitTime / 1000} segundos...`);
         await wait(waitTime);
 
         tweetsRes = await axios.get(
