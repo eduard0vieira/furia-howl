@@ -30,8 +30,15 @@ router.get("/mock/:username", async (req, res) => {
 
   Tweet 5:
   Sentimento: Crítica construtiva e Inclusividade
-  O torcedor sugere a criação de um time feminino, apoiando a inclusão e maior visibilidade para as jogadoras.`;
+  O torcedor sugere a criação de um time feminino, apoiando a inclusão e maior visibilidade para as jogadoras.
   
+  Esses sentimentos variados são típicos de um torcedor apaixonado que está profundamente envolvido com sua equipe,
+   misturando momentos de felicidade, frustração e esperança, mas sempre com o desejo de ver sua organização crescer
+    e alcançar novos patamares.
+  
+  
+  `;
+
   res.json({ tweets: mockTweets, summary: fakeSummary });
 });
 

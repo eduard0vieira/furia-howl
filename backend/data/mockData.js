@@ -1,7 +1,7 @@
 export const mockTweets = [
   {
     id: "1",
-    text: "Não consigo parar de pensar naquele clutch absurdo do yuurih ontem 😱🔥 Que jogador, velho... o cara tá em outro nível! #FURIA #CSGO",
+    text: "Não consigo parar de pensar naquele clutch absurdo que rolou ontem 😱🔥 Que jogador, velho... o cara tá em outro nível! #FURIA #CSGO",
     created_at: "2025-05-04T10:02:00Z",
   },
   {
