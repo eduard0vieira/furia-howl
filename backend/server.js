@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import twitterRoutes from "./routes/twitter.js";
+import { mockTweets } from './data/mockData.js';
 
 dotenv.config();
 

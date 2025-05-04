@@ -16,7 +16,13 @@ const Home = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:3000/api/twitter/user/${username}`);
+
+      const endpoint = 
+        username.toLowerCase() === "teste"
+        ? `http://localhost:3000/api/twitter/mock/${username}`
+        : `http://localhost:3000/api/twitter/user/${username}`;
+
+      const res = await axios.get(endpoint);
       setTweets(res.data.tweets);
       setSummary(res.data.summary);
     } catch (err) {

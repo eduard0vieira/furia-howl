@@ -2,10 +2,38 @@ import express from "express";
 import axios from "axios";
 import { getBearerToken } from "../services/twitter.js";
 import { summarizeTweets } from "../services/ai.js";
+import { mockTweets } from "../data/mockData.js";
 
 const router = express.Router();
 
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+router.get("/mock/:username", async (req, res) => {
+  const { username } = req.params;
+
+  const fakeSummary = `Resumo dos últimos tweets de @${username}: 
+  Tweet 1:
+  Sentimento: Admiração e Euforia
+  O torcedor está impressionado com o desempenho do yuurih, destacando sua habilidade excepcional.
+
+  Tweet 2:
+  Sentimento: Orgulho e Respeito
+  O torcedor expressa orgulho da FURIA, reconhecendo seu impacto e influência no cenário de e-sports.
+
+  Tweet 3:
+  Sentimento: Frustração e Esperança
+  O torcedor está desapontado com o desempenho recente, mas ainda acredita em uma possível recuperação.
+
+  Tweet 4:
+  Sentimento: Euforia e Emoção
+  O torcedor ficou empolgado com o jogo contra a G2, sentindo uma forte emoção e alegria com a partida.
+
+  Tweet 5:
+  Sentimento: Crítica construtiva e Inclusividade
+  O torcedor sugere a criação de um time feminino, apoiando a inclusão e maior visibilidade para as jogadoras.`;
+  
+  res.json({ tweets: mockTweets, summary: fakeSummary });
+});
 
 router.get("/user/:username", async (req, res) => {
   const { username } = req.params;
