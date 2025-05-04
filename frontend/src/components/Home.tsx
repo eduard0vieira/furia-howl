@@ -17,12 +17,12 @@ const Home = () => {
     try {
       setLoading(true);
 
-      const endpoint = 
+      const endpoint =
         username.toLowerCase() === "teste"
-        ? `https://furia-howl-production.up.railway.app/api/twitter/mock/${username}`
-        : `https://furia-howl-production.up.railway.app/api/twitter/user/${username}`;
-        // ? `furia-howl-production.up.railway.app/api/twitter/mock/${username}`
-        // : `furia-howl-production.up.railway.app/api/twitter/user/${username}`;
+          ? `https://furia-howl-production.up.railway.app/api/twitter/mock/${username}`
+          : `https://furia-howl-production.up.railway.app/api/twitter/user/${username}`;
+      // ? `furia-howl-production.up.railway.app/api/twitter/mock/${username}`
+      // : `furia-howl-production.up.railway.app/api/twitter/user/${username}`;
 
       const res = await axios.get(endpoint);
       setTweets(res.data.tweets);
@@ -55,6 +55,14 @@ const Home = () => {
           {loading ? "Carregando..." : "Buscar"}
         </button>
       </div>
+
+      <h1 className="font-semibold bg-yellow-100 text-yellow-600 border-l-4 border-yellow-500 p-4 rounded-md mb-6">
+        Atualmente utilizamos a API oficial do Twitter, que possui diversas limitações no plano gratuito.
+        Isso poderá ser melhorado em versões futuras do projeto.
+        Recomendamos utilizar o usuário <strong>teste</strong> para testar o funcionamento do aplicativo — os dados retornados são mockados, criados apenas para fins de demonstração.
+        Alternativamente, é possível aguardar o fim do <em>rate limit</em> da API do Twitter.
+      </h1>
+
 
       {summary && (
         <div className="mb-6 bg-gray-800 p-4 rounded">
