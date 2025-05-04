@@ -20,7 +20,7 @@ const Home = () => {
       setTweets(res.data.tweets);
       setSummary(res.data.summary);
     } catch (err) {
-      console.error("Erro ao pegar tweets", err)
+      console.error("Erro ao pegar tweets", err);
       alert("Erro ao buscar dados, API do twitter fora ou Rate Limiting");
     } finally {
       setLoading(false);
@@ -28,7 +28,7 @@ const Home = () => {
   };
 
   return (
-    <div className="p-6 w-full max-w-2xl relative">
+    <div className="p-6 w-full max-w-2xl relative pb-10">
       <h1 className="text-2xl font-bold mb-4">Resumo de Tweets</h1>
       <div className="flex items-center gap-2 mb-4">
         <input
@@ -49,13 +49,14 @@ const Home = () => {
 
       {summary && (
         <div className="mb-6 bg-gray-900 p-4 rounded">
-          <h2 className="text-lg font-semibold mb-2">Resumo de tweets do usúario:</h2>
+          <h2 className="text-lg font-semibold mb-2">Análise gerada pela IA de tweets do usuário @{username}:</h2>
           <p>{summary}</p>
         </div>
       )}
 
       {tweets.length > 0 && (
         <div className="space-y-4">
+          <h2 className="text-lg font-semibold mb-2">Tweets do usuário @{username}</h2>
           {tweets.map((tweet) => (
             <div
               key={tweet.id}

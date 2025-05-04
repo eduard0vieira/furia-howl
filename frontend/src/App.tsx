@@ -11,13 +11,15 @@ const App = () => {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-black text-white">
+    <div className="min-h-screen w-screen flex items-start justify-center bg-black text-white overflow-y-auto">
       {showSplash ? (
-        <img
-          src={furiaLogo}
-          alt="FURIA Logo"
-          className="w-48 animate-pulse"
-        />
+        <div className="h-screen w-full flex items-center justify-center">
+          <img
+            src={furiaLogo}
+            alt="FURIA Logo"
+            className="w-48 animate-pulse"
+          />
+        </div>
       ) : (
         <Home />
       )}
