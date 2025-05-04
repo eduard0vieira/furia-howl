@@ -35,11 +35,12 @@ const Home = () => {
 
   return (
     <div className="p-6 w-full max-w-2xl relative pb-10">
+      <h1 className="text-4xl font-bold mb-4 justify-center">FURIA Howl - Tweet Analyser</h1>
       <h1 className="text-2xl font-bold mb-4">Resumo de Tweets</h1>
       <div className="flex items-center gap-2 mb-4">
         <input
           type="text"
-          placeholder="Digite o username sem @"
+          placeholder="Digite o username sem @ (utilize teste para ver os dados mockados)"
           className="w-full p-2 rounded bg-gray-800 text-white"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
