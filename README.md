@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para o **processo seletivo da FURIA Tech**, com o objetivo de demonstrar habilidades práticas em desenvolvimento Fullstack.
 
-Esta aplicação permite buscar os tweets mais recentes de um usuário do Twitter e gerar automaticamente um resumo com ajuda da **API da OpenAI**, exibindo tudo em uma interface moderna e responsiva.
+Esta aplicação permite buscar os tweets mais recentes de um usuário do Twitter usando a própria API do Twitter e gerar automaticamente um resumo com ajuda da **API da OpenAI**, exibindo tudo em uma interface moderna e responsiva.
 
 ---
 
@@ -92,6 +92,15 @@ npm run dev
 
 ---
 
+## 🚀 Deploy
+
+A aplicação está disponível online com os seguintes serviços:
+
+- 🌐 **Frontend** hospedado na [Vercel](https://vercel.com/)
+- 🔧 **Backend** hospedado na [Railway](https://railway.app/)
+
+> O deploy facilita o acesso ao projeto sem a necessidade de instalação local.
+
 ## 🛣️ Rotas da API
 
 As seguintes rotas estão disponíveis no backend:
@@ -161,10 +170,9 @@ furia-howl/
 
 - Implementação de um ChatBOT com a personalidade da FURIA;
 - Sistema de cache/localStorage para reduzir chamadas à API;
-- Painel de visualização com análises/sentimento;
 - Criação de testes com Jest e Cypress;
-- Deploy automatizado (Vercel + Render);
 - Adição de loading spinners e feedback visual ao usuário.
+- Tratamento de erros de forma robusta, com mensagens mais claras para o usuário e logs detalhados no backend.
 
 ---
 
