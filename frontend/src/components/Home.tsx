@@ -19,8 +19,8 @@ const Home = () => {
 
       const endpoint = 
         username.toLowerCase() === "teste"
-        ? `http://localhost:3000/api/twitter/mock/${username}`
-        : `http://localhost:3000/api/twitter/user/${username}`;
+        ? `furia-howl-production.up.railway.app/api/twitter/mock/${username}`
+        : `furia-howl-production.up.railway.app/api/twitter/user/${username}`;
 
       const res = await axios.get(endpoint);
       setTweets(res.data.tweets);
