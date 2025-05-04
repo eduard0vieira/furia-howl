@@ -1,4 +1,4 @@
-#  FURIA Howl
+# 🐾 FURIA Howl
 
 Projeto desenvolvido para o **processo seletivo da FURIA Esports**, com o objetivo de demonstrar habilidades práticas em desenvolvimento Fullstack.
 
