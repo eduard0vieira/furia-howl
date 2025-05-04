@@ -159,6 +159,7 @@ furia-howl/
 ## ⚠️ Limitações Atuais
 
 - A API oficial do Twitter impõe **limites de requisição (rate limit)** na versão gratuita, para mostrar funcionalidade do projeto os testes são feitos com dados mockados (utilize o user teste no input principal para ver os dados mockados) ou aguarde o Rate Limit resetar;
+- A API só consegue analisar os ultimos 5 tweets do usúario
 - A aplicação não possui paginação nem busca avançada;
 - Sem testes automatizados implementados até o momento;
 - Design ainda básico (foco atual: funcionalidade);
