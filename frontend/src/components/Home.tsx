@@ -33,13 +33,13 @@ const Home = () => {
       <div className="flex items-center gap-2 mb-4">
         <input
           type="text"
-          placeholder="Digite o @username"
+          placeholder="Digite o username sem @"
           className="w-full p-2 rounded bg-gray-800 text-white"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <button
-          className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded"
+          className="bg-white hover:bg-gray-300 text-black px-4 py-2 rounded cursor-pointer"
           onClick={fetchData}
           disabled={loading}
         >
@@ -48,15 +48,15 @@ const Home = () => {
       </div>
 
       {summary && (
-        <div className="mb-6 bg-gray-900 p-4 rounded">
-          <h2 className="text-lg font-semibold mb-2">Análise gerada pela IA de tweets do usuário @{username}:</h2>
+        <div className="mb-6 bg-gray-800 p-4 rounded">
+          <h2 className="text-lg font-semibold mb-2">Análise gerada:</h2>
           <p>{summary}</p>
         </div>
       )}
 
       {tweets.length > 0 && (
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold mb-2">Tweets do usuário @{username}</h2>
+          <h2 className="text-lg font-semibold mb-2">Tweets do usuário:</h2>
           {tweets.map((tweet) => (
             <div
               key={tweet.id}
