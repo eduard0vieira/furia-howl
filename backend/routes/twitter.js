@@ -1,9 +1,11 @@
 import express from "express";
 import axios from "axios";
 import { getBearerToken } from "../services/twitter.js";
-import { summarizeTweets } from "../services/ai.js"; 
+import { summarizeTweets } from "../services/ai.js";
 
 const router = express.Router();
+
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 router.get("/user/:username", async (req, res) => {
   const { username } = req.params;
@@ -20,16 +22,41 @@ router.get("/user/:username", async (req, res) => {
 
     const userId = userRes.data.data.id;
 
-    const tweetsRes = await axios.get(
-      `https://api.twitter.com/2/users/${userId}/tweets`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-        params: {
-          "max_results": 2, // qtd de tweets 
-          "tweet.fields": "created_at,text",
-        },
+    let tweetsRes;
+    try {
+      tweetsRes = await axios.get(
+        `https://api.twitter.com/2/users/${userId}/tweets`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          params: {
+            "max_results": 5,
+            "tweet.fields": "created_at,text",
+          },
+        }
+      );
+    } catch (err) {
+      if (err.response?.status === 429) {
+        const resetTime = err.response.headers['x-rate-limit-reset'];
+        const now = Math.floor(Date.now() / 1000);
+        const waitTime = (resetTime - now + 1) * 1000;
+
+        console.warn(`Rate limit atingido. Aguardando ${waitTime / 1000} segundos (${waitTime/60})...`);
+        await wait(waitTime);
+
+        tweetsRes = await axios.get(
+          `https://api.twitter.com/2/users/${userId}/tweets`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            params: {
+              "max_results": 5,
+              "tweet.fields": "created_at,text",
+            },
+          }
+        );
+      } else {
+        throw err;
       }
-    );
+    }
 
     const summary = await summarizeTweets(tweetsRes.data.data);
 
