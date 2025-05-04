@@ -1,4 +1,4 @@
-# 🐾 FURIA Howl
+# 🐾 FURIA Howl - Tweet Analyser
 
 Projeto desenvolvido para o **processo seletivo da FURIA Tech**, com o objetivo de demonstrar habilidades práticas em desenvolvimento Fullstack.
 
